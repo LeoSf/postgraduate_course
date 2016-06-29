@@ -1,0 +1,9 @@
+Actividad 8: Driver de teclado (tipo de pulsación)
+
+	Diseñe, edite y compile un driver genérico de teclado que permita el uso de distinto tipo de teclados (cuatro teclas o un teclado matricial) y cuyo comportamiento ante una tecla pulsada por un largo tiempo sea configurable:
+
+    Dar por válida la acción y esperar la acción de soltar la tecla.
+    Dar por válida la acción de manera repetitiva con un tiempo configurable si el usuario mantiene la tecla presionada.
+    Luego de un cierto tiempo TL, se toma la acción nuevamente y luego de otro tiempo TC, vuelva a dar la acción por válida repetidamente. Ambos tiempos podrán ser configurables.
+
+Si se le ocurre otro comportamiento, por favor, agréguelo.

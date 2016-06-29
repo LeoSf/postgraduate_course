@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['read_5fadc_5fvalue_5fpooling',['read_ADC_value_pooling',['../group__Baremetal__App.html#ga23dc62a9f412eaa91b5e899b2ff20528',1,'adc.c']]],
+  ['readbyte_5fuart_5fusb_5feduciaa',['readByte_UART_USB_EDUCIAA',['../group__Baremetal__App.html#gac774f80e2a11d8ff634dfb13cd9e7548',1,'uart.c']]],
+  ['readstatus_5fuart_5fusb_5feduciaa',['readStatus_UART_USB_EDUCIAA',['../group__Baremetal__App.html#gaaef460ee05f034c177e018ad95147348',1,'uart.c']]],
+  ['readswitches',['readSwitches',['../group__Baremetal.html#ga21abf74edee20ff63b8e6f9f5b972f92',1,'teclas.c']]],
+  ['red',['red',['../structedu__ciaa__ledRGB.html#a9aaf8b5a223b5925887976bb814d35df',1,'edu_ciaa_ledRGB']]],
+  ['red_5fduty',['red_duty',['../structedu__ciaa__ledRGB.html#a9949a32d4d20a669f59ee19ff1de627c',1,'edu_ciaa_ledRGB']]],
+  ['red_5fgreen',['RED_GREEN',['../group__Baremetal.html#gga5a2846a461f7ea9de9dd827b7ee8a134a4ca95a142d3b65498d1c737477badc51',1,'rgbled.h']]],
+  ['red_5fled',['RED_LED',['../group__Baremetal.html#gga1f3289eeddfbcff1515a3786dc0518faaedcf3ad9edba345343e3d99b9d27d5a9',1,'led.h']]],
+  ['red_5frgb',['RED_RGB',['../group__Baremetal.html#gga2faf89d5642f7cc3b4882eef947adf1faf6564775106ee2f2547230cbded79b9d',1,'rgbled.h']]],
+  ['rgbled_2ec',['rgbled.c',['../rgbled_8c.html',1,'']]],
+  ['rgbled_2eh',['rgbled.h',['../rgbled_8h.html',1,'']]],
+  ['rit_5firqhandler',['RIT_IRQHandler',['../group__Baremetal.html#ga94381ae71a78d9fcc2b50d0b13a5b45e',1,'interrupts.h']]],
+  ['rit_5firqhandler_5fact5',['RIT_IRQHandler_Act5',['../group__Baremetal.html#gae0f683e9de78c382f886af9317aa21f6',1,'RIT_IRQHandler_Act5(void):&#160;interrupts.c'],['../group__Baremetal__App.html#gae0f683e9de78c382f886af9317aa21f6',1,'RIT_IRQHandler_Act5(void):&#160;interrupts.c']]],
+  ['rit_5firqhandler_5fact9',['RIT_IRQHandler_Act9',['../group__Baremetal.html#ga2b65423b7b31ba162a13f4a8246a2189',1,'RIT_IRQHandler_Act9(void):&#160;interrupts.c'],['../group__Baremetal__App.html#ga2b65423b7b31ba162a13f4a8246a2189',1,'RIT_IRQHandler_Act9(void):&#160;interrupts.c']]],
+  ['ritcleaninterrupt',['RITCleanInterrupt',['../group__Baremetal.html#ga1c41038b9f58dafad9f48ee7e9f26fc4',1,'timers.c']]],
+  ['ritgettimeintervalms',['RITGetTimeIntervalms',['../group__Baremetal.html#gaffd8052d8aa48129420bfe981ae1f549',1,'timers.c']]],
+  ['ritgettimeintervalus',['RITGetTimeIntervalus',['../group__Baremetal.html#gadb64ea8880f86e5fab8e88d6f79c6baf',1,'timers.c']]],
+  ['ritinitinterrupt',['RITInitInterrupt',['../group__Baremetal.html#ga6fdbad91e817d6f870152bb1a2228a8c',1,'timers.c']]],
+  ['ritsettimeinterval_5fms',['RITSetTimeInterval_ms',['../group__Baremetal.html#gacbd151273e9cd848cc61729ea0f8a2c6',1,'timers.c']]],
+  ['ritsettimeinterval_5fus',['RITSetTimeInterval_us',['../group__Baremetal.html#gad9542ee21ce355fb6ea3d5d10e2beee4',1,'timers.c']]],
+  ['rs',['RS',['../struct____LCD__DATA__Type.html#afd4fba94fe5ad96f426e95b036c7a897',1,'__LCD_DATA_Type']]]
+];

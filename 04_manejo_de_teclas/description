@@ -1,0 +1,7 @@
+Enunciado de la actividad 4:
+
+(consigna tomada de la Guía de ejercitación práctica tomada del curso)
+
+2.b) Diseñe e implemente un firmware sobre la EDU-CIAA que haga parpadear un led 
+con un periodo que permita visualizar el proceso. Mediante las cuatro teclas 
+disponibles se debe poder seleccionar el led activo. Emplear retardo por software.

@@ -1,0 +1,21 @@
+Actividad 2: Blinking con driver
+
+Blinking, con Driver propio led.c y led.h.
+
+Empleando LPCOpen (consulte la Guía Rápida de Puertos de Entrada -Salida), diseñe un driver para el manejo de los leds de la EDU-CIAA.
+
+* Descomprima la carpeta drivers bm dentro de la carpeta /projects. La misma corresponde a la capa de drivers de dispositivos de la HAL. Cada nuevo driver a desarrollar incorporará archivos nuevo_driver.h y nuevo_driver.c a las subcarpetas inc y src respectivamente.
+* Descomprima la carpeta 1 blinking baremetal dentro de la carpeta /projects. La misma corresponde a la capa de aplicación de este ejemlpo. Cada nueva aplicación  a desarrollar incorporará una nueva carpeta similar a esta.
+* Declare funciones en led.h para encender, apagar y cambiar de estado -toggle- de cualquiera de los leds de la placa. Defínalas en led.c
+* Empleando el tipo de dato struct defina funciones en led.c que permitan acceder al led tricolor y a cada led por separado.
+* Diseñe una aplicación similar a Blinking empleando LPCOpen, siguiendo la lógica de la figura. 
+
+
+Para la codificación tenga en cuentas los siguientes conceptos del libro The C Programming Languaje - Brian Kernighan & Dennis Ritchie 2nd Edition.
+
+1.4 Symbolic Constants
+
+6.1 Basics of Structures
+
+Intente cumplir la mayor cantidad de reglas misra-c-2004.
+http://campus.bioingenieria.edu.ar/mod/resource/view.php?id=8860
