@@ -34,9 +34,7 @@
  *
  */
 
-/** \brief Interrupt functions for the current app.
- **
- **
+/** \brief Final Exam of the postgraduate course.
  **
  **/
 
@@ -60,116 +58,66 @@
  */
 
 /*==================[inclusions]=============================================*/
-#include "interrupts.h"
+#include "app_interrupts.h"
 
 
 /*==================[macros and definitions]=================================*/
-
+/* DAC Resolution  TODO it's the same that in the driver file of the DAC */
+# define DAC_RESOLUTION	10
+# define DAC_MAX_VALUE 	((1<<DAC_RESOLUTION)-1)
 /*==================[internal data declaration]==============================*/
 
 /*==================[internal functions declaration]=========================*/
 
 /*==================[internal data definition]===============================*/
 
+
 /*==================[external data definition]===============================*/
-/** Tick counter of the PWM cycle of 100 ticks (used in fade function for RGB )*/
-uint8_t tick_counter;
-
-/** Cycle counter of a state before to change to the nex bright value in the fade function of the RGB LED */
-uint16_t cycle_counter;
-
-/** Variable to know exactly which status led has to be modified */
-uint8_t led_counter;
-
-/** Variable to know if a led has to be on or off. 0-Off 1-On */
-uint8_t led_status;
+extern uint8_t option;
 
 /*==================[internal functions definition]==========================*/
 
 
 /*==================[external functions definition]==========================*/
-
-/** \brief Interrupt Routine Service of the RIT timer used in fade function*/
-//void RIT_IRQHandler(void)
-//{
-//	/** \details
-//	 * The ISR count the specific number of interruptions, so it can emulate the behavior of a PWM
-//	 * control method. Having said that, Ton (time high) is measured with tick_counter, and the
-//	 * number of times that this value of bright is repeated is function of cycle_counter.
-//	 * */
-//	static uint16_t tickInterrupt = 0;
-//
-//	RITCleanInterrupt();		/** Clearing of the Interrupt flag */
-//
-//	if(tick_counter == 100)
-//	{
-//		tick_counter = 0;
-//		cycle_counter++;
-//	}
-//
-//	else
-//		tick_counter++;
-//
-////	toggleLed(1);
-//}
-
-/** \brief Interrupt Routine Service of the RIT timer used in Activity number five */
-void RIT_IRQHandler_Act5(void)
+/** \brief Interrupt Routine Service of the RIT timer used in ... */
+void RIT_IRQHandler(void)
 {
 	/** \details
-	 * 	Interrupt Routine Service of the RIT timer used in Activity number five.
-	 *	This IRS does a toggle of the selected led in the main function.
+	 *	RIT timer interrupt to acquire a signal of 10 HZ
 	 * */
+	uint16_t adc_valueRead = 0;
+	uint16_t dac_valueOut = 0;
+	static uint16_t gain = 1<<8;
 
-	/** Clearing of the Interrupt flag */
 	RITCleanInterrupt();
+	adc_valueRead = read_ADC_value_pooling();
 
-	/** Condition when the led is shifted */
-	if (led_status == 2)
-	{
-		ledOff(YELLOW_LED | RED_LED | GREEN_LED);
-		ledOffRGB(BLUE_RGB | RED_RGB | GREEN_RGB);
-		led_status = 1;
-	}
+	toggleLed(YELLOW_LED);
 
-	if (led_status == 1)
+	switch(option)
 	{
-		if (led_counter < 8)
-			ledOnRGB(led_counter);
-		else
-			ledOn(led_counter);
-		led_status = 0;
+		case OPTION1:
+			gain += 1;
+			break;
+		case OPTION2:
+			gain -= 1;
+			break;
+		case OPTION3:
+			gain = 0;
+			break;
+		case OPTION4:
+			gain = adc_valueRead;
+			break;
 	}
-	else
+	dac_valueOut = gain * adc_valueRead/(1<<8);
+	if (dac_valueOut > DAC_MAX_VALUE)
 	{
-		if (led_counter < 8)
-			ledOffRGB(led_counter);
-		else
-			ledOff(led_counter);
-		led_status = 1;
+		dac_valueOut = DAC_MAX_VALUE;
 	}
+	update_DAC_value(dac_valueOut);
+
+
 }
-
-///** \brief Interrupt Routine Service of the RIT timer used in Activity number nine */
-//void RIT_IRQHandler_Act9(void)
-//{
-//	/** \details
-//		 * 	Interrupt Routine Service of the RIT timer used in Activity number five.
-//		 *	This IRS does a toggle of the selected led in the main function.
-//		 * */
-//
-//	static uint16_t dac_value = 0;
-//
-//	/** Clearing of the Interrupt flag */
-//	RITCleanInterrupt();
-//
-//	dac_value++;
-//	if (dac_value == (1<<10)-1)
-//		dac_value = 0;
-//
-//	update_DAC_value(dac_value);
-//}
-
 
 /** @} doxygen end group definition */
 /** @} doxygen end group definition */
