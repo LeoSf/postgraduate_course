@@ -75,13 +75,11 @@
 /*==================[internal functions definition]==========================*/
 
 /*==================[external functions definition]==========================*/
-/** \brief ADC Initialization method  */
+/** \brief TODO init_UART_FTDI_EDUCIAA Initialization method  */
 uint8_t init_UART_FTDI_EDUCIAA(void)
 {
-
 	/** \details
-	 * This function initialize the ADC peripheral in the EDU-CIAA board,
-	 * with the correct parameters with LPCOpen library. It uses CH1
+	 * TODO description init_UART_FTDI_EDUCIAA
 	 *
 	 * \param none
 	 *
@@ -89,7 +87,7 @@ uint8_t init_UART_FTDI_EDUCIAA(void)
 	 * */
 
 
-	/* UART2 (USB-UART) */
+	/** UART2 (USB-UART) */
 	Chip_UART_Init(LPC_USART2);
 	Chip_UART_SetBaud(LPC_USART2, 115200);
 
@@ -100,35 +98,23 @@ uint8_t init_UART_FTDI_EDUCIAA(void)
 	Chip_SCU_PinMux(7, 1, MD_PDN, FUNC6);              /* P7_1: UART2_TXD */
 	Chip_SCU_PinMux(7, 2, MD_PLN|MD_EZI|MD_ZI, FUNC6); /* P7_2: UART2_RXD */
 
-	/* UART3 (RS232) */
-	Chip_UART_Init(LPC_USART3);
-	Chip_UART_SetBaud(LPC_USART3, 115200);
-
-	Chip_UART_SetupFIFOS(LPC_USART3, UART_FCR_FIFO_EN | UART_FCR_TRG_LEV0);
-
-	Chip_UART_TXEnable(LPC_USART3);
-
-	Chip_SCU_PinMux(2, 3, MD_PDN, FUNC2);              /* P2_3: UART3_TXD */
-	Chip_SCU_PinMux(2, 4, MD_PLN|MD_EZI|MD_ZI, FUNC2); /* P2_4: UART3_RXD */
-
 	return TRUE;
 }
 
+/** \brief TODO init_UART_RS485_EDUCIAA Initialization method  */
 uint8_t init_UART_RS485_EDUCIAA(void)
 {
-
 	/** \details
-	 * This function initialize the ADC peripheral in the EDU-CIAA board,
-	 * with the correct parameters with LPCOpen library. It uses CH1
+	 * TODO description init_UART_RS485_EDUCIAA
 	 *
 	 * \param none
 	 *
 	 * \return uint8_t: TBD (to support errors in the init function)
 	 * */
 
-	/*UART initialization*/
+	/*  UART initialization  */
 
-	/* UART0 (RS485/Profibus) */
+	/** UART0 (RS485/Profibus) */
 	Chip_UART_Init(LPC_USART0);
 	Chip_UART_SetBaud(LPC_USART0, 115200);
 
@@ -136,31 +122,30 @@ uint8_t init_UART_RS485_EDUCIAA(void)
 
 	Chip_UART_TXEnable(LPC_USART0);
 
-	Chip_SCU_PinMux(9, 5, MD_PDN, FUNC7);              /* P9_5: UART0_TXD */
-	Chip_SCU_PinMux(9, 6, MD_PLN|MD_EZI|MD_ZI, FUNC7); /* P9_6: UART0_RXD */
+	Chip_SCU_PinMux(9, 5, MD_PDN, FUNC7);              /*!< P9_5: UART0_TXD */
+	Chip_SCU_PinMux(9, 6, MD_PLN|MD_EZI|MD_ZI, FUNC7); /*!< P9_6: UART0_RXD */
 
 	Chip_UART_SetRS485Flags(LPC_USART0, UART_RS485CTRL_DCTRL_EN | UART_RS485CTRL_OINV_1);
 
-	Chip_SCU_PinMux(6, 2, MD_PDN, FUNC2);              /* P6_2: UART0_DIR */
+	Chip_SCU_PinMux(6, 2, MD_PDN, FUNC2);              /*!< P6_2: UART0_DIR */
 
 	return TRUE;
 }
 
+/** \brief TODO init_UART_RS232_EDUCIAA Initialization method  */
 uint8_t init_UART_RS232_EDUCIAA(void)
 {
-
 	/** \details
-	 * This function initialize the ADC peripheral in the EDU-CIAA board,
-	 * with the correct parameters with LPCOpen library. It uses CH1
+	 * TODO description init_UART_RS232_EDUCIAA
 	 *
 	 * \param none
 	 *
 	 * \return uint8_t: TBD (to support errors in the init function)
 	 * */
 
-	/*UART initialization*/
+	/* UART initialization*/
 
-	/* UART3 (RS232) */
+	/** UART3 (RS232) */
 	Chip_UART_Init(LPC_USART3);
 	Chip_UART_SetBaud(LPC_USART3, 115200);
 

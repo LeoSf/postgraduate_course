@@ -38,9 +38,9 @@
 # library
 LIBS 				      += drivers_bm
 # version
-drivers_bm_VERSION		= 0.1.0
+drivers_bm_VERSION		= 1.0.0
 # library path
-drivers_bm_PATH 	       = $(ROOT_DIR)$(DS)projects$(DS)drivers_bm
+drivers_bm_PATH 	       = $(ROOT_DIR)$(DS)projects$(DS)FIUNER_Baremetal$(DS)drivers_bm
 # library source path
 drivers_bm_SRC_PATH      = $(drivers_bm_PATH)$(DS)src
 # library include path
